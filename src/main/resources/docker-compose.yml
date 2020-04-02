@@ -1,0 +1,17 @@
+version: "3"
+services:
+ kaiburrdb:
+  image: mongo:latest
+  container_name: "kaiburrdb"
+  ports:
+    - 27017:27017
+ kaiburr-docker:
+   image: docker-kaiburr:latest
+   container_name: docker-kaiburr
+   ports:
+     - 8080:8080
+   links:
+     - kaiburrdb
+  
+   
+ 
